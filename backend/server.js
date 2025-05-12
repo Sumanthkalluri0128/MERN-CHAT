@@ -7,6 +7,7 @@ const socketio = require("socket.io");
 const userRouter = require("./routes/userRoutes");
 const socketIo = require("./socket");
 const groupRouter = require("./routes/groupRoutes");
+const messageRouter = require("./routes/messageRoutes");
 dotenv.config();
 
 const app = express();
@@ -33,7 +34,7 @@ socketIo(io);
 //our route
 app.use("/api/users", userRouter);
 app.use("/api/groups", groupRouter);
-
+app.use("/api/messages", messageRouter);
 //start the server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, console.log("server is up and running on port", PORT));
