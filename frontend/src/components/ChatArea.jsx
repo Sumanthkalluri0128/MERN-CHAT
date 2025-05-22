@@ -14,7 +14,7 @@ import {
 import { FiSend, FiInfo, FiMessageCircle } from "react-icons/fi";
 import UsersList from "./UsersList";
 
-const ChatArea = () => {
+const ChatArea = ({ selectedGroup, setSelectedGroup }) => {
   // Sample data for demonstration
   const sampleMessages = [
     {
