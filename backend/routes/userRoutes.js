@@ -36,9 +36,7 @@ userRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
-    console.log("hloo");
     if (user && (await user.matchPassword(password))) {
-      console.log("hlo");
       res.json({
         user: {
           _id: user._id,
