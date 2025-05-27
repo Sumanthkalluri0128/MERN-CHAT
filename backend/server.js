@@ -14,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: ["http://127.0.0.1:5173"],
     method: ["GET", "POST"],
     Credentials: true,
   },
@@ -22,6 +22,7 @@ const io = socketio(server, {
 
 //middlewares
 app.use(cors());
+//app.use(cors(corsOption));
 app.use(express.json());
 //connect to db
 mongoose

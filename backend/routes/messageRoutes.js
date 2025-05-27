@@ -1,7 +1,6 @@
 const express = require("express");
 const Message = require("../models/ChatModel");
 const { protect } = require("../middlewares/authMiddleware");
-
 const messageRouter = express.Router();
 
 messageRouter.post("/", protect, async (req, res) => {

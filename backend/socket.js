@@ -14,7 +14,7 @@ const socketIo = (io) => {
       connectedUser.set(socket.id, { user, room: groupId });
       //get list of all users currently in the room
       const usersInRoom = Array.from(connectedUser.values())
-        .filter((u) => room === groupId)
+        .filter((u) => u.room === groupId)
         .map((u) => u.user);
       //Emit updated users list to all client in the room
       io.in(groupId).emit("users in room", usersInRoom);
